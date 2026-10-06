@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+<title>Sunny Stand</title>
+<meta name="description" content="Grow, carry and sell fresh food at your own little stand.">
+<meta name="theme-color" content="#9fd37c">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Sunny Stand">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&display=swap" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="style.css">
+<script defer src="../js/audio.js"></script>
+<script defer src="js/data.js"></script>
+<script defer src="js/sprites.js"></script>
+<script defer src="js/save.js"></script>
+<script defer src="js/sim.js"></script>
+<script defer src="js/render.js"></script>
+<script defer src="js/ui.js"></script>
+<script defer src="js/main.js"></script>
+</head>
+<body>
+<div id="app">
+  <canvas id="cv" aria-label="Your stand. Drag anywhere to walk."></canvas>
+
+  <header class="hud" id="hud">
+    <div class="hud-row">
+      <div class="pill coins" id="coins-pill"><span class="ico">🪙</span><b id="coins">0</b></div>
+      <button class="pill loc" id="btn-loc"><span class="ico" id="loc-ico">🌻</span><b id="loc-name">Sunny Patch</b></button>
+      <button class="round" id="btn-settings" aria-label="Settings">⚙️</button>
+    </div>
+    <div class="task" id="task">
+      <div class="t-ico" id="t-ico">🍅</div>
+      <div class="t-body"><b id="t-title">Sell 5 Tomatoes</b><div class="t-bar"><i id="t-fill"></i><span id="t-count">0/5</span></div></div>
+      <button class="t-claim" id="t-claim" hidden>Claim<small id="t-reward">🪙 15</small></button>
+    </div>
+  </header>
+
+  <div class="walk-hint" id="walk-hint" hidden><div class="hand">👆</div><p>Drag anywhere to walk</p></div>
+
+  <nav class="dock" id="dock">
+    <button class="dock-btn" id="btn-map"><span>🗺️</span>Map</button>
+    <button class="dock-btn main" id="btn-ups"><span>⬆️</span>Upgrades<i class="dot" id="ups-dot" hidden></i></button>
+    <button class="dock-btn" id="btn-boost"><span>⚡</span><em id="boost-label">2× Boost</em></button>
+  </nav>
+
+  <div class="pop" id="pop" hidden></div>
+  <div id="sheet-root"></div>
+  <div id="fx"></div>
+</div>
+<noscript><p style="padding:24px;font-family:sans-serif">Sunny Stand needs JavaScript to run.</p></noscript>
+</body>
+</html>

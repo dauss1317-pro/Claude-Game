@@ -135,6 +135,7 @@ button { font-family: inherit; color: inherit; }
 .menu-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
 .menu-grid .btn { display: flex; flex-direction: column; align-items: center; gap: 2px; font-size: 14px; padding: 10px 4px; min-height: 70px; }
 .menu-grid .btn span { font-size: 24px; }
+.stand-link { display: flex; align-items: center; justify-content: center; min-height: 48px; font-size: 15px; text-decoration: none; }
 
 /* ---------- list screens ---------- */
 .topbar {

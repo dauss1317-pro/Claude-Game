@@ -1,4 +1,11 @@
-# Pocket Kitchen
+# Pocket Kitchen & Sunny Stand
+
+Two lightweight mobile games in one repo:
+
+- **Pocket Kitchen** (`index.html`): hands-on cooking with touch gestures.
+- **Sunny Stand** (`stand/index.html`): an idle farm-stand tycoon where you walk around, harvest, sell and upgrade.
+
+## Pocket Kitchen
 
 A lightweight, mobile-first casual cooking game. You run a small food stall: customers walk up, order, and you cook every dish with touch gestures (drag, hold and release, swipe, circle-stir, chop, slice, roll), then swipe the dish up to serve it.
 
@@ -51,3 +58,28 @@ Progress is saved in `localStorage`.
 | `js/main.js` | Menus (main, recipes, upgrades, settings, results) and boot |
 
 To add a recipe, add an entry to `RECIPES` in `js/recipes.js` that returns a list of steps using the existing step types.
+
+## Sunny Stand
+
+Open `stand/index.html`. Drag anywhere on the screen to walk (a floating joystick appears under your finger).
+
+- **Harvest:** walk onto a station to pick up what it grew. Items stack above your head.
+- **Sell:** stand on the green mat. Customers at the counter take the items their bubbles ask for. Coins pile up in the cash box; walk over it or tap it to collect.
+- **Build:** stand on the next empty plot and your coins pour into it until it is built (or tap it and press Build).
+- **Upgrade:** tap a station to see its level, stars, profit, grow time and stock. Hold the upgrade button to buy levels quickly. Stars at levels 10, 25, 50, 75 and 100 double the money.
+- **Upgrades sheet:** Farm Helpers (they harvest and sell for you, and earn while you are away), More Customers, Bigger Basket, Running Shoes, Rich Soil, Better Prices.
+- **Tasks:** a guided chain at the top with a pointer arrow and coin rewards. The last task is the stand's goal (every station to a target level) and unlocks the next stand on the map.
+- **Map:** Sunny Patch, Orchard Lane (juice press), Windmill Bakery (bread oven), Coconut Cove (smoothie blender). Machines turn a raw crop into a pricier product.
+- **2× Boost:** free double money for 90 seconds, then a 4-minute recharge.
+
+Art is drawn on one canvas (crops and food use emoji). To use image sprites instead, for example the CC0 renders from [Kenney's Food Kit](https://kenney.nl/assets/food-kit), put PNGs in `stand/assets/food/` and map item ids to file names in `stand/js/sprites.js`.
+
+| File | Responsibility |
+| --- | --- |
+| `stand/js/data.js` | Items, locations, global upgrades, tasks, economy formulas |
+| `stand/js/save.js` | Saved progress per location |
+| `stand/js/sim.js` | Stations, customers, helpers, carrying, selling and building |
+| `stand/js/render.js` | Canvas drawing with a cached static background |
+| `stand/js/ui.js` | HUD, task tracker, station popup, sheets, modals |
+| `stand/js/main.js` | Joystick and taps, game event feedback, frame loop, saving |
+| `stand/js/sprites.js` | Optional item image sprites |
